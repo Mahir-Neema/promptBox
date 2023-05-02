@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f1f1f1;
-    background-image: url(https://img.freepik.com/free-vector/watercolor-halloween-background_52683-43697.jpg?w=996&t=st=1683032071~exp=1683032671~hmac=b40763c0a7ca8ec5f7ee8640ab4c423e68d52334343e2f7e89242b2fba4dc8d3);
+    background-image: url(https://cdn.pixabay.com/photo/2019/07/26/17/17/forest-4365198_960_720.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -18,7 +18,7 @@ h1 {
 .container {
     width: 80%;
     margin: 40px auto;
-    background-color: #ffffff88;
+    background-color: #ffffffb1;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
