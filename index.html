@@ -29,7 +29,7 @@
 		}
 		textarea {
 			width: 100%;
-			height: 300px;
+			height: 250px;
 			margin-bottom: 20px;
 			padding: 10px;
 			font-size: 18px;
@@ -43,6 +43,10 @@
 			line-height: 1.5;
 			text-align: justify;
 		}
+		.button_container{
+			display: flex;
+			justify-content: space-between;
+		}
 		button {
 			background-color: #0095ff;
 			color: #fff;
@@ -52,6 +56,7 @@
 			font-size: 18px;
 			cursor: pointer;
 			transition: all 0.2s ease-in-out;
+			margin: 10px;
 		}
 		button:hover {
 			background-color: #0080cc;
@@ -71,14 +76,40 @@
 	<div class="container">
 		<p>Paste your text below and click the button to add "Explain this in easy language" before it:</p>
 		<textarea id="text-box" placeholder="Paste your text here"></textarea>
-		<button onclick="copyToClipboard()">Copy to Clipboard</button>
+		<div class="button_container">
+			<button onclick="copyEasyToClipboard()">Explain in Easy</button>
+			<button onclick="copyDetailToClipboard()">Explain in Detail</button>
+			<button onclick="copyCommentCodeToClipboard()">Comment the code</button>
+		</div>
 		<p class="copy-success">Text copied to clipboard with added string!</p>
 	</div>
 
 	<script>
-		function copyToClipboard() {
+		function copyEasyToClipboard() {
 			var text = document.getElementById("text-box").value;
-			text = "Explain this in easy language\n\n" + text;
+			text = "Explain this in easy language:\n\n" + text;
+			navigator.clipboard.writeText(text);
+			var copySuccess = document.querySelector(".copy-success");
+			copySuccess.style.display = "block";
+			setTimeout(function() {
+				copySuccess.style.display = "none";
+			}, 3000);
+		}
+
+		function copyDetailToClipboard() {
+			var text = document.getElementById("text-box").value;
+			text = "Explain this in detail: \n\n" + text;
+			navigator.clipboard.writeText(text);
+			var copySuccess = document.querySelector(".copy-success");
+			copySuccess.style.display = "block";
+			setTimeout(function() {
+				copySuccess.style.display = "none";
+			}, 3000);
+		}
+
+		function copyCommentCodeToClipboard() {
+			var text = document.getElementById("text-box").value;
+			text = "Comment this Code properly: \n\n" + text;
 			navigator.clipboard.writeText(text);
 			var copySuccess = document.querySelector(".copy-success");
 			copySuccess.style.display = "block";
